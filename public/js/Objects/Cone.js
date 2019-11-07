@@ -59,15 +59,13 @@ function Cone(scene, world, material , {scaleX , scaleY , radSegments}){
         }
      
         if (currentPressedKeys[37]) {
-            // Kiri
-            // console.log("kiri")
+            // Left
             this.body.velocity.x = -100;
         }else if (currentPressedKeys[39]) {
-            // Kanan
-            // console.log("kanan")
+            // Right
             this.body.velocity.x = 100;
         }else if(sensorY != null){
-            this.body.velocity.x = sensorY * 100;
+            this.body.velocity.x = sensorY * 10;
         }else{
             this.body.velocity.x = 0;    
         }

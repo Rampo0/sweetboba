@@ -22,14 +22,6 @@ var io = socket(server);
 io.on('connection', function(socket){
     console.log("made socket connection with " + socket.id);
 
-    socket.on('chat', function(data){
-        io.sockets.emit('chat', data);
-    });
-
-    socket.on('typing', function(data){
-        socket.broadcast.emit('typing', data);
-    })
-
     socket.on('sensorY', function(data){
         socket.broadcast.emit('sensorY', data);
     })

@@ -65,19 +65,12 @@ function SceneManager(canvas) {
     var socket = io()
     
     socket.on('sensorY',function(data){
-        // console.log(data);
         sensorY = data;
     })
 
     socket.on('sensorZ',function(data){
         console.log(data);
     })
-
-    // var dataChat;
-    // socket.on('chat',function(data){
-    //     // console.log(data);
-    //     dataChat = data;
-    // })
 
     // End Init
     
@@ -189,21 +182,9 @@ function SceneManager(canvas) {
             if (!selectedObject) {
                 sceneObjects.splice(i, 1);
             }
-            // console.log(sceneObjects.length);
         }
 
         renderer.render(scene, camera);
-
-        // rendererStats.update(renderer);
-        // socket.emit('chat', "hai");
-        // if(dataChat){
-        //     console.log(dataChat);
-        // }
-
-        if(sensorY){
-            console.log(sensorY);
-            // player.update(elapsedTime, sensorY);
-        }
 
         player.update(elapsedTime, sensorY);
         
