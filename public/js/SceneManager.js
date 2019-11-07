@@ -69,7 +69,7 @@ function SceneManager(canvas) {
     })
 
     socket.on('sensorZ',function(data){
-        console.log(data);
+        // console.log(data);
     })
 
     // End Init
@@ -167,7 +167,7 @@ function SceneManager(canvas) {
         const elapsedTime = clock.getElapsedTime();
         world.step(timeStep);
 
-        if(seconds >= 0.1){
+        if(seconds >= 1){
             // todo every 5 seconds
             seconds = 0.0;
             // Spawn obstacles
