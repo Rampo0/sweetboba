@@ -58,7 +58,7 @@ function Cone(scene, world, material , {scaleX , scaleY , radSegments}){
             this.body.position.y = 15;
         }
 
-        if(sensorY){
+        if(sensorY != null){
             this.body.velocity.x = sensorY * 100;
         }
      

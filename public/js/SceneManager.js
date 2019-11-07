@@ -23,6 +23,7 @@ function SceneManager(canvas) {
 
     const groundMaterial = new CANNON.Material("groundMaterial");
     const slipperyMaterial = new CANNON.Material("slipperyMaterial");        
+    var player;
 
     const world = buildWorld();
     const scene = buildScene();
@@ -77,8 +78,6 @@ function SceneManager(canvas) {
     //     // console.log(data);
     //     dataChat = data;
     // })
-
-    var player;
 
     // End Init
     
