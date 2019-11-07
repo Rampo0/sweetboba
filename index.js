@@ -29,4 +29,13 @@ io.on('connection', function(socket){
     socket.on('typing', function(data){
         socket.broadcast.emit('typing', data);
     })
+
+    socket.on('sensorY', function(data){
+        socket.broadcast.emit('sensorY', data);
+    })
+
+    socket.on('sensorZ', function(data){
+        socket.broadcast.emit('sensorZ', data);
+    })
+
 });

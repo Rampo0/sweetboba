@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/4a2ed872c1f2228bc8d76b4007fe42484c500031/cannon/index.d.ts",
+    "raw": "registry:dt/cannon#0.1.0+20170123234549",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/4a2ed872c1f2228bc8d76b4007fe42484c500031/cannon/index.d.ts"
+  }
+}
