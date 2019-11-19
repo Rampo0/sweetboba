@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html >
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+		<title>Sweet Boba</title> 		
+		<link rel="stylesheet" href="css/style.css"> 
+		<link rel="stylesheet" href="css/gameui.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	</head>
+
+	<body>
+
+		<!-- Create Game UI -->
+		<div class="game-ui ui-component">
+			<!-- <div class="pause-btn ui-component">
+				Pause
+			</div> -->
+
+			<div class="health-bar ui-component">
+				Health : 3
+			</div>
+
+			<div class="ui-component score">
+				Score : 100
+			</div>
+
+		</div>
+		
+		<canvas id="canvas"></canvas>
+	
+		<script src='js/libs/three.min.js'></script>
+		<script src='js/libs/stats.min.js'></script>
+		<script src='js/libs/cannon.min.js'></script>
+		<script src="js/libs/dat.gui.js"></script>
+		<script src="js/libs/threex.rendererstats.js"></script>
+
+		<script src="js/libs/OrbitControls.js"></script>
+		<script src="js/libs/GameMaster.js"></script>
+		
+
+		<script src="js/Objects/GameManager.js"></script>
+		<script src="js/Objects/GameUI.js"></script>
+		<script src="js/Objects/GeneralLights.js"></script>
+		<script src="js/Objects/AmbientLight.js"></script>
+		<script src="js/Objects/SceneSubject.js"></script>
+		<script src="js/Objects/Skybox.js"></script>
+		<script src="js/Objects/MyText.js"></script>
+		<script src="js/Objects/Plane.js"></script>
+		<script src="js/Objects/Cone.js"></script>
+		<script src="js/Objects/Box.js"></script>
+		<script src="js/Objects/Cylinder.js"></script>
+		<script src="js/Objects/Torus.js"></script>
+		<script src="js/Objects/MyGeometry.js"></script>
+		
+		
+		<script src="js/SceneManager.js"></script> 
+		<script src="js/TutorialScene.js"></script>   
+		<script src="js/main.js"></script>
+
+	</body>
+</html>
+

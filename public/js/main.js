@@ -3,7 +3,7 @@ const canvas = document.getElementById("canvas");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const sceneManager = new SceneManager(canvas);
+var sceneManager = new SceneManager(canvas);
 // const sceneManager = new TutorialScene(canvas);
 
 bindEventListeners();
