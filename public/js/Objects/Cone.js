@@ -18,8 +18,10 @@ function Cone(scene, world, material , {scaleX , scaleY , radSegments}){
     this.body.position.set(0,15,0);
     this.body.tag = "Player";
     this.body.collisionResponse = 0;
-    // this.body.fixedRotation = true;
-    // this.body.updateMassProperties();
+  
+    // Player Status
+
+    this.body.health = 3;
         
     world.addBody(this.body);
     
@@ -53,6 +55,7 @@ function Cone(scene, world, material , {scaleX , scaleY , radSegments}){
     BuildController()
     
     this.update = function(time, sensorY){
+
         
         if(this.body.position.y <= 15){
             this.body.position.y = 15;
@@ -74,9 +77,20 @@ function Cone(scene, world, material , {scaleX , scaleY , radSegments}){
             this.body.velocity.y = 100;    
         }
 
+        // block health decrement
+        if(this.body.health < 0){
+            this.body.health = 0;
+        }
+
         mesh.position.copy(this.body.position);
         mesh.quaternion.copy(this.body.quaternion);
 
     }
  
 }
+
+
+
+
+  // this.body.fixedRotation = true;
+    // this.body.updateMassProperties();
