@@ -13,7 +13,8 @@ function SceneManager(canvas) {
     stats.domElement.style.position = 'absolute';
     stats.domElement.style.right = '0px';
     stats.domElement.style.top = '0px';
-    document.body.appendChild(stats.domElement);
+    // document.body.appendChild(stats.domElement);
+    $('.route-view').append(stats.domElement);
 
     const groundMaterial = new CANNON.Material("groundMaterial");
     const slipperyMaterial = new CANNON.Material("slipperyMaterial");        
@@ -152,7 +153,7 @@ function SceneManager(canvas) {
     var cancel = setInterval(Counting , 10);
     // end second counting
 
-    this.update = function () {
+    this.update = function (stop) {
 
         stats.begin();
 
@@ -185,6 +186,10 @@ function SceneManager(canvas) {
         //update ui score
         ui.score.text("Score : " + gm.score);
         
+
+        if (stop == true) {
+            clearBuffer();
+        }
 
         stats.end();
 
@@ -226,6 +231,11 @@ function SceneManager(canvas) {
         });
   
         world.addContactMaterial(slippery_ground_cm);
+    }
+
+    function clearBuffer(){
+        // clear program that still running
+        sound.stop();
     }
 
 }

@@ -1,10 +1,12 @@
-const canvas = document.getElementById("canvas");
+// delete(document.getElementById("canvas"));
+var canvas = document.getElementById("canvas");
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 var sceneManager = new SceneManager(canvas);
 // const sceneManager = new TutorialScene(canvas);
+var stop = false;
 
 bindEventListeners();
 render();
@@ -25,8 +27,22 @@ function resizeCanvas() {
 }
 
 function render() {
+	
+	if (stop == true) {
+		sceneManager.update(stop);
+		stop = false;
+		return;
+	}
 
 	requestAnimationFrame(render);
-	sceneManager.update();
+	sceneManager.update(stop);
 	
 }
+
+$('.back').click(function(){
+
+	// load html with get request
+	stop = true;
+	$( ".route-view" ).load( "menu.html" );
+
+})

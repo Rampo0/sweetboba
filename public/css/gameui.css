@@ -15,6 +15,11 @@
     left: 100px;
 }
 
+.back{
+    bottom : 100px;
+    left: 100px;
+}
+
 .health-bar{
     top : 10px;
     left:  10px;

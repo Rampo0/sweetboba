@@ -5,4 +5,5 @@ function GameUI(){
 
     this.score = $('.score');
     this.score.text("Score : " + 200);
+
 }
