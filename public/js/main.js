@@ -3,8 +3,8 @@ var canvas = document.getElementById("canvas");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-// var sceneManager = new SceneManager(canvas);
-var sceneManager = new BasicScene(canvas);
+var sceneManager = new SceneManager(canvas);
+// var sceneManager = new BasicScene(canvas);
 var stop = false;
 
 bindEventListeners();
