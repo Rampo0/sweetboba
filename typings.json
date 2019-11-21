@@ -1,4 +1,5 @@
 {
+  "name": "socketio",
   "dependencies": {},
   "globalDependencies": {
     "cannon": "registry:dt/cannon#0.1.0+20170123234549",
