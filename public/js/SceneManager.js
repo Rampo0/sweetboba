@@ -153,7 +153,7 @@ function SceneManager(canvas) {
     var cancel = setInterval(Counting , 10);
     // end second counting
 
-    this.update = function (stop) {
+    this.update = function () {
 
         stats.begin();
 
@@ -185,10 +185,10 @@ function SceneManager(canvas) {
         ui.health.text("Health : " + player.body.health);
         //update ui score
         ui.score.text("Score : " + gm.score);
-        
 
-        if (stop == true) {
-            clearBuffer();
+        if(player.body.health == 0){
+            time=false;
+            $('#game-over-container').show();
         }
 
         stats.end();
@@ -233,8 +233,8 @@ function SceneManager(canvas) {
         world.addContactMaterial(slippery_ground_cm);
     }
 
-    function clearBuffer(){
-        // clear program that still running
+    this.clear = function clearBuffer(){
+        // clear program that still running when to change scene or something
         sound.stop();
     }
 

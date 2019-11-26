@@ -1,3 +1,10 @@
+#overlay{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: black;
+}
+
 .game-ui{
     width: 100%;
     height: 100%;
@@ -28,5 +35,12 @@
 .score{
     top : 30px;
     left: 10px;
+}
+
+.game-over{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: transparent;
 }
 

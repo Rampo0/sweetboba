@@ -5,7 +5,9 @@ canvas.height = window.innerHeight;
 
 var sceneManager = new SceneManager(canvas);
 // var sceneManager = new BasicScene(canvas);
+// static
 var stop = false;
+var time = true;
 
 bindEventListeners();
 render();
@@ -28,20 +30,14 @@ function resizeCanvas() {
 function render() {
 	
 	if (stop == true) {
-		sceneManager.update(stop);
+		sceneManager.clear();
 		stop = false;
 		return;
 	}
 
 	requestAnimationFrame(render);
-	sceneManager.update(stop);
+	if (time == true)
+		sceneManager.update();
 	
 }
 
-$('.back').click(function(){
-
-	// load html with get request
-	stop = true;
-	$( ".route-view" ).load( "menu.html" );
-
-})

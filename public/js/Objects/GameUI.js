@@ -6,4 +6,28 @@ function GameUI(){
     this.score = $('.score');
     this.score.text("Score : " + 200);
 
+    $('.back').click(function(){
+
+        // change scene
+        stop = true;
+
+        // load html with get request
+        $( ".route-view" ).load( "menu.html" );
+        
+    })
+
+    $('#menu-btn').click(function(){
+        // change scene
+        stop = true;
+        
+        $( ".route-view" ).load( "menu.html" );
+    })
+
+    $('#restart-btn').click(function(){
+        // change scene
+        stop = true;
+        // load html with get request
+        $( ".route-view" ).load( "game.html" );
+    })
+
 }
