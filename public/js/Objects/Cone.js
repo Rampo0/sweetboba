@@ -1,4 +1,4 @@
-function Cone(scene, world, material , {scaleX , scaleY , radSegments}){
+function Cone(scene, world, material , {scaleX , scaleY , radSegments} , audioManager){
     
     var geometry = new THREE.ConeBufferGeometry( scaleX,scaleY,radSegments );
     var material = new THREE.MeshBasicMaterial( {color: "#4ca8c9"} );
@@ -33,6 +33,7 @@ function Cone(scene, world, material , {scaleX , scaleY , radSegments}){
         if(e.body.tag == "Obstacle"){
             world.remove(e.body);
             scene.remove(scene.getObjectByName(e.body.id.toString()));
+            audioManager.PlaySound('duar.ogg', false);
         }
     });
 
