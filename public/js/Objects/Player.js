@@ -39,7 +39,7 @@ function Player(scene, world, material , {scaleX , scaleY , radSegments} , audio
   
     // Player Status
 
-    this.body.health = 100;
+    this.body.health = 3;
         
     world.addBody(this.body);
     
