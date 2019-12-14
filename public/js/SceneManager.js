@@ -18,7 +18,7 @@ function SceneManager(canvas) {
 
     const groundMaterial = new CANNON.Material("groundMaterial");
     const slipperyMaterial = new CANNON.Material("slipperyMaterial");
-    var player;
+    let player;
     const ui = new GameUI();
 
     // setup game manager
@@ -38,34 +38,34 @@ function SceneManager(canvas) {
     const audioManager = new AudioManager(camera);
 
     // create an AudioListener and add it to the camera
-    var listener = new THREE.AudioListener();
+    let listener = new THREE.AudioListener();
     camera.add(listener);
 
     // create a global audio source
-    var sound = new THREE.Audio(listener);
+    let sound = new THREE.Audio(listener);
 
     // load a sound and set it as the Audio object's buffer
     const audioLoader = new THREE.AudioLoader();
 
-    audioLoader.load('/assets/sounds/bg.ogg', function (buffer) {
+    audioLoader.load('/assets/sounds/bg_yoshi.ogg', function (buffer) {
         if(sound.source){
             sound.stop();
         }
         sound.setBuffer(buffer);
         sound.setLoop(true);
-        sound.setVolume(1);
+        sound.setVolume(0.5);
         sound.play();
     });
 
     const sceneObjects = createSceneObjects(scene);
-    var timeStep = 1 / 60;
+    let timeStep = 1 / 60;
 
     buildPhysicsContactMaterial();
 
     // Sensor Setup
 
-    var sensorY;
-    var socket = io()
+    let sensorY;
+    let socket = io()
 
     socket.on('sensorY', function (data) {
         sensorY = data;
@@ -140,7 +140,7 @@ function SceneManager(canvas) {
             scaleY: 30,
             radSegments: 32
         }, audioManager);
-        var plane = new Plane(scene, world, groundMaterial);
+        let plane = new Plane(scene, world, groundMaterial);
 
         // Assign Dynamic Object
 
@@ -152,12 +152,12 @@ function SceneManager(canvas) {
     }
 
     // seconds counting
-    var seconds = 0.0;
+    let seconds = 0.0;
 
     function Counting() {
         seconds += 0.01;
     }
-    var cancel = setInterval(Counting, 10);
+    let cancel = setInterval(Counting, 10);
     // end second counting
 
     this.update = function () {
@@ -178,7 +178,7 @@ function SceneManager(canvas) {
             sceneObjects[i].update(elapsedTime);
 
             // Drop if gameobject was destroyed
-            var selectedObject = scene.getObjectByName(sceneObjects[i].body.id.toString());
+            let selectedObject = scene.getObjectByName(sceneObjects[i].body.id.toString());
             if (!selectedObject) {
                 sceneObjects.splice(i, 1);
             }
@@ -219,7 +219,7 @@ function SceneManager(canvas) {
 
     function buildPhysicsContactMaterial() {
 
-        var ground_ground_cm = new CANNON.ContactMaterial(groundMaterial, groundMaterial, {
+        let ground_ground_cm = new CANNON.ContactMaterial(groundMaterial, groundMaterial, {
             friction: 0.4,
             restitution: 0.3,
             contactEquationStiffness: 1e8,
@@ -230,7 +230,7 @@ function SceneManager(canvas) {
 
         world.addContactMaterial(ground_ground_cm);
 
-        var slippery_ground_cm = new CANNON.ContactMaterial(groundMaterial, slipperyMaterial, {
+        let slippery_ground_cm = new CANNON.ContactMaterial(groundMaterial, slipperyMaterial, {
             friction: 0,
             restitution: 0.3,
             contactEquationStiffness: 1e8,
@@ -243,6 +243,7 @@ function SceneManager(canvas) {
     this.clear = function clearBuffer() {
         // clear program that still running when to change scene or something
         sound.stop();
+        audioManager.StopSound();
     }
 
 }
