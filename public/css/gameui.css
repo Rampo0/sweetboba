@@ -1,0 +1,46 @@
+#overlay{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: black;
+}
+
+.game-ui{
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    background: transparent;
+}
+
+.ui-component{
+    position: absolute;
+}
+
+.pause-btn{
+    bottom : 100px;
+    left: 100px;
+}
+
+.back{
+    bottom : 100px;
+    left: 100px;
+}
+
+.health-bar{
+    top : 10px;
+    left:  10px;
+}
+
+.score{
+    top : 30px;
+    left: 10px;
+}
+
+.game-over{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: transparent;
+}
+

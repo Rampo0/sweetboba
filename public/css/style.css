@@ -5,3 +5,12 @@ html, body {
     overflow: hidden;
     margin: 0;
 }
+
+.no-gutters{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+p{
+    color: white;
+}

@@ -26,6 +26,14 @@ function Box(scene, world, material,  xPosition){
 
     scene.add(mesh);
 
+    // onCollde
+
+    this.body.addEventListener("collide",function(e){
+        if(e.body.tag == "Player"){
+            e.body.health-= 0.25;
+        }
+    });
+
     var speed = 20;
     this.update = function(time){
         
