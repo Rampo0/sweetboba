@@ -7,7 +7,7 @@ function Background(scene){
     // texture.wrapT = THREE.RepeatWrapping;
     // texture.repeat.set( 1, 1 );
 
-    var geometry =  new THREE.PlaneGeometry( 10000, 9000, 1);
+    var geometry =  new THREE.PlaneGeometry( 11000, 9000, 1);
     // var material = new THREE.MeshBasicMaterial({color: '#81c4a7', side: THREE.DoubleSide} );
     var material = new THREE.MeshLambertMaterial({ map : texture });
     var mesh = new THREE.Mesh(geometry, material);
