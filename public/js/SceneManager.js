@@ -9,13 +9,14 @@ function SceneManager(canvas) {
     }
 
     // Renderer Stats
-    const stats = new Stats();
-    stats.domElement.style.position = 'absolute';
-    stats.domElement.style.right = '0px';
-    stats.domElement.style.top = '0px';
+    // const stats = new Stats();
+    // stats.domElement.style.position = 'absolute';
+    // stats.domElement.style.right = '0px';
+    // stats.domElement.style.top = '0px';
     // document.body.appendChild(stats.domElement);
-    $('.route-view').append(stats.domElement);
+    // $('.route-view').append(stats.domElement);
 
+    
     const groundMaterial = new CANNON.Material("groundMaterial");
     const slipperyMaterial = new CANNON.Material("slipperyMaterial");
     let player;
@@ -37,27 +38,33 @@ function SceneManager(canvas) {
     // Build Audio
     const audioManager = new AudioManager(camera);
 
-    // create an AudioListener and add it to the camera
-    let listener = new THREE.AudioListener();
-    camera.add(listener);
+    // // create an AudioListener and add it to the camera
+    // let listener = new THREE.AudioListener();
+    // camera.add(listener);
 
-    // create a global audio source
-    let sound = new THREE.Audio(listener);
+    // // create a global audio source
+    // let sound = new THREE.Audio(listener);
 
-    // load a sound and set it as the Audio object's buffer
-    const audioLoader = new THREE.AudioLoader();
+    // // load a sound and set it as the Audio object's buffer
+    // const audioLoader = new THREE.AudioLoader();
 
-    audioLoader.load('/assets/sounds/bg_yoshi.ogg', function (buffer) {
-        if(sound.source){
-            sound.stop();
-        }
-        sound.setBuffer(buffer);
-        sound.setLoop(true);
-        sound.setVolume(0.5);
-        sound.play();
-    });
+    // audioLoader.load('/assets/sounds/bg_yoshi.ogg', function (buffer) {
+    //     if(sound.source){
+    //         sound.stop();
+    //     }
+    //     sound.setBuffer(buffer);
+    //     sound.setLoop(true);
+    //     sound.setVolume(0.5);
+    //     sound.play();
+    // });
 
     const sceneObjects = createSceneObjects(scene);
+    const planeObjects = [
+        new ContinousePlane(scene, world, groundMaterial, -2000),
+        new ContinousePlane(scene, world, groundMaterial, -7000),
+        new ContinousePlane(scene, world, groundMaterial, -12000),
+    ];
+
     let timeStep = 1 / 60;
 
     buildPhysicsContactMaterial();
@@ -135,17 +142,20 @@ function SceneManager(canvas) {
 
         const PointLight = new GeneralLights(scene);
         const Ambientlight = new AmbientLight(scene);
-        player = new Cone(scene, world, slipperyMaterial, {
+        // const skybox = new Skybox(scene);
+        const background = new Background(scene);
+        
+        player = new Player(scene, world, slipperyMaterial, {
             scaleX: 10,
             scaleY: 30,
             radSegments: 32
         }, audioManager);
-        let plane = new Plane(scene, world, groundMaterial);
+        // let plane = new Plane(scene, world, groundMaterial);
 
         // Assign Dynamic Object
 
         const sceneObjects = [
-
+        
         ];
 
         return sceneObjects;
@@ -161,9 +171,8 @@ function SceneManager(canvas) {
     // end second counting
 
     this.update = function () {
-
-        stats.begin();
-
+        // stats.begin();
+ 
         const elapsedTime = clock.getElapsedTime();
         world.step(timeStep);
 
@@ -171,17 +180,38 @@ function SceneManager(canvas) {
             // todo every 5 seconds
             seconds = 0.0;
             // Spawn obstacles
-            sceneObjects.push(new Box(scene, world, groundMaterial, GetRandomInt(-185, 185)));
+            sceneObjects.push(new Obstacle(scene, world, groundMaterial, GetRandomInt(-185, 185)));
         }
+
 
         for (let i = 0; i < sceneObjects.length; i++) {
             sceneObjects[i].update(elapsedTime);
 
             // Drop if gameobject was destroyed
-            let selectedObject = scene.getObjectByName(sceneObjects[i].body.id.toString());
-            if (!selectedObject) {
+            // let selectedObject = scene.getObjectByName(sceneObjects[i].body.id.toString());
+            // if (!selectedObject) {
+            //     sceneObjects.splice(i, 1);
+            // }
+
+            if (sceneObjects[i].body.position.z >= 100) {
                 sceneObjects.splice(i, 1);
             }
+        }
+
+        // console.log(sceneObjects.length);
+        // console.log(planeObjects.length);
+
+        for (let i = 0; i < planeObjects.length; i++) {
+            planeObjects[i].update(elapsedTime);
+            // Drop if gameobject was destroyed
+            let selectedObject = scene.getObjectByName(planeObjects[i].body.id.toString());
+            if (!selectedObject) {
+                planeObjects.splice(i, 1);
+            }
+        }
+
+        if(planeObjects.length == 2){
+            planeObjects.push(new ContinousePlane(scene, world, groundMaterial, -12000));
         }
 
         renderer.render(scene, camera);
@@ -189,16 +219,17 @@ function SceneManager(canvas) {
         player.update(elapsedTime, sensorY);
 
         //update ui health
-        ui.health.text("Health : " + player.body.health);
+        ui.health.text(player.body.health);
         //update ui score
-        ui.score.text("Score : " + gm.score);
+        ui.score.text(gm.score);
+        ui.lastScore.text(gm.score);
 
         if (player.body.health == 0) {
             time = false;
             $('#game-over-container').show();
         }
 
-        stats.end();
+        // stats.end();
 
     }
 

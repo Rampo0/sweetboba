@@ -1,4 +1,4 @@
-function Cone(scene, world, material , {scaleX , scaleY , radSegments} , audioManager){
+function Player(scene, world, material , {scaleX , scaleY , radSegments} , audioManager){
     
     // var geometry = new THREE.ConeBufferGeometry( scaleX,scaleY,radSegments );
     // var material = new THREE.MeshBasicMaterial( {color: "#4ca8c9"} );
