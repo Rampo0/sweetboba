@@ -5,6 +5,7 @@ canvas.height = window.innerHeight;
 
 var sceneManager = new SceneManager(canvas);
 // var sceneManager = new BasicScene(canvas);
+
 // static
 var stop = false;
 var time = true;
@@ -31,7 +32,8 @@ function render() {
 	
 	if (stop == true) {
 		sceneManager.clear();
-		stop = false;
+		console.log(stop);
+		// stop = false;	
 		return;
 	}
 

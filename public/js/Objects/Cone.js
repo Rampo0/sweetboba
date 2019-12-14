@@ -21,7 +21,7 @@ function Cone(scene, world, material , {scaleX , scaleY , radSegments} , audioMa
   
     // Player Status
 
-    this.body.health = 3;
+    this.body.health = 1;
         
     world.addBody(this.body);
     
@@ -62,21 +62,28 @@ function Cone(scene, world, material , {scaleX , scaleY , radSegments} , audioMa
             this.body.position.y = 15;
         }
      
-        if (currentPressedKeys[37]) {
+        if (currentPressedKeys[37] && this.body.position.x > -185) {
             // Left
             this.body.velocity.x = -100;
-        }else if (currentPressedKeys[39]) {
+        }else if (currentPressedKeys[39] && this.body.position.x < 185) {
             // Right
             this.body.velocity.x = 100;
         }else if(sensorY != null){
-            this.body.velocity.x = sensorY * 10;
+            if(sensorY > 0 && this.body.position.x < 185){
+                this.body.velocity.x = sensorY * 10;
+            }else if(sensorY < 0 && this.body.position.x > -185){
+                this.body.velocity.x = sensorY * 10;    
+            }else{
+                this.body.velocity.x = 0;    
+            }
         }else{
             this.body.velocity.x = 0;    
         }
 
-        if(currentPressedKeys[32]){
-            this.body.velocity.y = 100;    
-        }
+        // Jump
+        // if(currentPressedKeys[32]){
+        //     this.body.velocity.y = 100;    
+        // }
 
         // block health decrement
         if(this.body.health < 0){

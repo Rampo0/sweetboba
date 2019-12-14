@@ -5,7 +5,7 @@ function AudioManager(camera){
     camera.add(listener);
 
     // create a global audio source
-    var sound = new THREE.Audio(listener);
+    const sound = new THREE.Audio(listener);
 
     // load a sound and set it as the Audio object's buffer
     const audioLoader = new THREE.AudioLoader();
@@ -22,5 +22,8 @@ function AudioManager(camera){
         });
     }
     
+    this.StopSound = function(){
+        sound.stop();
+    }
 
 }

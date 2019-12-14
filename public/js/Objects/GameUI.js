@@ -5,7 +5,7 @@ function GameUI(){
 
     this.score = $('.score');
     this.score.text("Score : " + 200);
-
+    
     $('.back').click(function(){
 
         // change scene
@@ -20,14 +20,20 @@ function GameUI(){
         // change scene
         stop = true;
         
-        $( ".route-view" ).load( "menu.html" );
+        if(stop == true){
+            $( ".route-view" ).load( "menu.html" );
+        }
     })
 
     $('#restart-btn').click(function(){
         // change scene
         stop = true;
+        
         // load html with get request
-        $( ".route-view" ).load( "game.html" );
+        if(stop == true){
+            $( ".route-view" ).load( "game.html" );
+        }
+
     })
 
 }
