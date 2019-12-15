@@ -12,7 +12,7 @@ function Player(scene, world, material , {scaleX , scaleY , radSegments} , audio
        
         mesh = gltf.scene;
         // mesh.name = this.body.id.toString();
-        mesh.scale.set(10,10,10);
+        mesh.scale.set(20,20,20);
        
         scene.add(mesh);
         mixer = new THREE.AnimationMixer(mesh);

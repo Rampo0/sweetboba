@@ -146,7 +146,7 @@ function SceneManager(canvas) {
         const background = new Background(scene);
         
         player = new Player(scene, world, slipperyMaterial, {
-            scaleX: 10,
+            scaleX: 30,
             scaleY: 30,
             radSegments: 32
         }, audioManager);
@@ -182,8 +182,8 @@ function SceneManager(canvas) {
         world.step(timeStep);
         
 
-        if(gm.score % 10 == 0 && gm.score != 0){
-            speed += 0.1;
+        if(gm.score % 15 == 0 && gm.score != 0 && speed <= 21){
+            speed += 0.2;
         }
 
         Counting(detik);
@@ -191,11 +191,11 @@ function SceneManager(canvas) {
         if (seconds >= 0.7) {
             // todo every 5 seconds
             seconds = 0.0;
-            if(gm.score % 10 == 0) {
-                detik += 0.003
+            if(gm.score % 10 == 0 && detik <= 0.046) {
+                detik += 0.002
             }
             // Spawn obstacles
-            sceneObjects.push(new Obstacle(scene, world, groundMaterial, GetRandomInt(-185, 185), speed));
+            sceneObjects.push(new Obstacle(scene, world, groundMaterial, GetRandomInt(-175, 175), speed));
         }
 
 
@@ -232,7 +232,7 @@ function SceneManager(canvas) {
 
         renderer.render(scene, camera);
 
-        player.update(elapsedTime, sensorY);
+        player.update(0.05, sensorY);
 
         //update ui health
         ui.health.text(player.body.health);
