@@ -12,6 +12,9 @@ html, body {
 }
 
 p{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
     color: white;
 }
 
