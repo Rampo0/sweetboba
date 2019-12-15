@@ -15,7 +15,13 @@
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "Sphere.001"
+            "name" : "Sphere.001",
+            "rotation" : [
+                0,
+                0.2486899048089981,
+                0,
+                0.9685831665992737
+            ]
         }
     ],
     "animations" : [
