@@ -1,11 +1,14 @@
 function GameUI(){
 
     this.health =  $(".health-bar");
-    this.health.text("Health : " + 20);
+    this.health.text("20");
 
     this.score = $('.score');
-    this.score.text("Score : " + 200);
+    this.score.text("200");
 
+    this.lastScore = $('.last-score');
+    this.lastScore.text("");
+    
     $('.back').click(function(){
 
         // change scene
@@ -20,14 +23,20 @@ function GameUI(){
         // change scene
         stop = true;
         
-        $( ".route-view" ).load( "menu.html" );
+        if(stop == true){
+            $( ".route-view" ).load( "menu.html" );
+        }
     })
 
     $('#restart-btn').click(function(){
         // change scene
         stop = true;
+        
         // load html with get request
-        $( ".route-view" ).load( "game.html" );
+        if(stop == true){
+            $( ".route-view" ).load( "game.html" );
+        }
+
     })
 
 }

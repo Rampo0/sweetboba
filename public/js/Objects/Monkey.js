@@ -2,11 +2,13 @@ function Monkey(scene) {
 
     var loader = new THREE.GLTFLoader();
     var mixer;
+    var mesh;
 
-    loader.load('assets/models/monkey.glb', function (gltf) {
-        model = gltf.scene;
-        scene.add(model);
-        mixer = new THREE.AnimationMixer(model);
+    loader.load('assets/models/Cup.gltf', function (gltf) {
+        mesh = gltf.scene;
+        mesh.position.x = 1;
+        scene.add(mesh);
+        mixer = new THREE.AnimationMixer(mesh);
         mixer.clipAction( gltf.animations[0] ).play();
 
     }, undefined, function (e) {

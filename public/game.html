@@ -10,7 +10,8 @@
 </script>
 
 <div id="overlay" class="row no-gutters justify-content-center">
-  <p class="align-self-center">Loading ...</p>
+  <!-- <p class="align-self-center">Loading ...</p> -->
+  <img src="assets/sprites/MenuUI_loading.png" class="img-fluid" alt="loading">
 </div>
 
 <!-- Create Game UI -->
@@ -19,20 +20,40 @@
     Back
   </div> -->
 
-  <div class="health-bar ui-component">
-    Health : 3
-  </div>
+  <div class="scoreboard">
+      <img src="assets/sprites/GamePlayUI_scoreboard.png" class="img-fluid img-score" alt="score">
 
-  <div class="ui-component score">
-    Score : 100
-  </div>
-
-  <div id="game-over-container" style="display: none;" class="container-fluid">
-    <div class="game-over row no-gutters justify-content-center">
-      <div class="col-md-4 align-self-center text-center">
-        <button id="menu-btn" class="btn btn-primary">Menu</button> <div></div>
-        <button id="restart-btn" class="btn btn-primary">Restart</button>
+      <div class="health-bar ui-component">
+        Health : 3
       </div>
+    
+      <div class="ui-component score">
+        Score : 100
+      </div>    
+  </div>
+
+  <img src="assets/sprites/GamePlayUI_sweetboba logo.png"  class="img-fluid ui-component logo-game" alt="logo" />
+
+  
+  <div id="game-over-container" style="display: none;" class="container-fluid">
+    <div class="game-over row justify-content-center">
+      
+      <div class="col-12 align-self-center text-center">
+
+        <img src="assets/sprites/GamePlayUI_game over.png" class="img-fluid bg-go" alt="game-over"> <div></div>
+        
+        <div class="ui-component last-score">
+          100
+        </div>
+
+        <div class="row ui-component return justify-content-center">
+          <div class="col">
+              <img id="menu-btn" style="cursor: pointer;" src="assets/sprites/GamePlayUI_return button.png" class="img-fluid return-img" alt="return">  
+          </div>
+        </div>
+      
+      </div>
+
     </div>
   </div>
   
@@ -56,19 +77,23 @@
 <script src="js/Objects/GameUI.js"></script>
 <script src="js/Objects/GeneralLights.js"></script>
 <script src="js/Objects/AmbientLight.js"></script>
-<script src="js/Objects/SceneSubject.js"></script>
-<script src="js/Objects/Skybox.js"></script>
-<script src="js/Objects/MyText.js"></script>
-<script src="js/Objects/Plane.js"></script>
-<script src="js/Objects/Cone.js"></script>
-<script src="js/Objects/Box.js"></script>
-<script src="js/Objects/Cylinder.js"></script>
-<script src="js/Objects/Torus.js"></script>
-<script src="js/Objects/MyGeometry.js"></script>
-<script src="js/Objects/Monkey.js"></script>
+<!-- <script src="js/Objects/SceneSubject.js"></script> -->
+<!-- <script src="js/Objects/Skybox.js"></script> -->
+<!-- <script src="js/Objects/MyText.js"></script> -->
+<!-- <script src="js/Objects/Plane.js"></script> -->
+<!-- <script src="js/Objects/Cone.js"></script> -->
+<!-- <script src="js/Objects/Box.js"></script> -->
+<!-- <script src="js/Objects/Cylinder.js"></script> -->
+<!-- <script src="js/Objects/Torus.js"></script> -->
+<!-- <script src="js/Objects/MyGeometry.js"></script> -->
+<!-- <script src="js/Objects/Monkey.js"></script> -->
+<script src="js/Objects/Background.js"></script>
+<script src="js/Objects/Obstacle.js"></script>
+<script src="js/Objects/ContinousePlane.js"></script>
+<script src="js/Objects/Player.js"></script>
 
 <script src="js/SceneManager.js"></script>
-<script src="js/TutorialScene.js"></script>
-<script src="js/BasicScene.js"></script>
+<!-- <script src="js/TutorialScene.js"></script> -->
+<!-- <script src="js/BasicScene.js"></script> -->
 
 <script src="js/engine.js"></script>
