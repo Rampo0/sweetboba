@@ -172,7 +172,7 @@ function SceneManager(canvas) {
  //   let cancel = setInterval(Counting, 10);
     // end second counting
 
-    var speed = 20;
+    var speed = {value : 20};
 
     this.update = function () {
         // stats.begin();
@@ -182,8 +182,8 @@ function SceneManager(canvas) {
         world.step(timeStep);
         
 
-        if(gm.score % 15 == 0 && gm.score != 0 && speed <= 21){
-            speed += 0.2;
+        if(gm.score % 10 == 0 && gm.score != 0 && speed.value <= 25){
+            speed.value += 0.5;
         }
 
         Counting(detik);

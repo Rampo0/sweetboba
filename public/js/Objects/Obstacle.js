@@ -22,11 +22,12 @@ function Obstacle(scene,world, material, xPosition, spd){
  
      this.body.addEventListener("collide",function(e){
          if(e.body.tag == "Player"){
+             spd.value=20;
              e.body.health -= 0.25;
          }
      });
  
-    var speed = spd;
+    var speed = spd.value;
 
     var loader = new THREE.GLTFLoader();
     var mixer;
