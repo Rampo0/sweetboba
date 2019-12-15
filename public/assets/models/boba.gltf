@@ -8,49 +8,14 @@
         {
             "name" : "Scene",
             "nodes" : [
-                0,
-                1,
-                2
+                0
             ]
         }
     ],
     "nodes" : [
         {
-            "name" : "Light",
-            "rotation" : [
-                0.527965784072876,
-                -0.3426900804042816,
-                -0.2578161358833313,
-                -0.7330392003059387
-            ],
-            "translation" : [
-                4.1830854415893555,
-                7.302762508392334,
-                -1.0054539442062378
-            ]
-        },
-        {
-            "name" : "Camera",
-            "rotation" : [
-                0.483536034822464,
-                0.33687159419059753,
-                -0.20870360732078552,
-                0.7804827094078064
-            ],
-            "translation" : [
-                7.358891487121582,
-                4.958309173583984,
-                6.925790786743164
-            ]
-        },
-        {
             "mesh" : 0,
-            "name" : "Sphere",
-            "translation" : [
-                0,
-                1.0157654285430908,
-                0
-            ]
+            "name" : "Sphere.001"
         }
     ],
     "animations" : [
@@ -59,12 +24,12 @@
                 {
                     "sampler" : 0,
                     "target" : {
-                        "node" : 2,
+                        "node" : 0,
                         "path" : "rotation"
                     }
                 }
             ],
-            "name" : "SphereAction",
+            "name" : "Sphere.001Action",
             "samplers" : [
                 {
                     "input" : 4,
@@ -90,7 +55,7 @@
     ],
     "meshes" : [
         {
-            "name" : "Sphere",
+            "name" : "Sphere.001",
             "primitives" : [
                 {
                     "attributes" : {
@@ -154,19 +119,19 @@
         {
             "bufferView" : 4,
             "componentType" : 5126,
-            "count" : 2,
+            "count" : 50,
             "max" : [
                 2.0833333333333335
             ],
             "min" : [
-                0
+                0.041666666666666664
             ],
             "type" : "SCALAR"
         },
         {
             "bufferView" : 5,
             "componentType" : 5126,
-            "count" : 2,
+            "count" : 50,
             "type" : "VEC4"
         }
     ],
@@ -193,18 +158,18 @@
         },
         {
             "buffer" : 0,
-            "byteLength" : 8,
+            "byteLength" : 200,
             "byteOffset" : 23648
         },
         {
             "buffer" : 0,
-            "byteLength" : 32,
-            "byteOffset" : 23656
+            "byteLength" : 800,
+            "byteOffset" : 23848
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 23688,
+            "byteLength" : 24648,
             "uri" : "boba.bin"
         }
     ]
