@@ -8,6 +8,9 @@ function GameUI(){
 
     this.lastScore = $('.last-score');
     this.lastScore.text("");
+
+//    const highScore = new highscore(lastScore)
+ //   scoretinggi.highscore.text(highScore)
     
     $('.back').click(function(){
 

@@ -28,6 +28,7 @@ function SceneManager(canvas) {
     function scoreCounting() {
         gm.score++;
     }
+
     setInterval(scoreCounting, 1000);
 
     const world = buildWorld();
@@ -172,6 +173,7 @@ function SceneManager(canvas) {
 
     this.update = function () {
         // stats.begin();
+
  
         const elapsedTime = clock.getElapsedTime();
         world.step(timeStep);
@@ -225,6 +227,8 @@ function SceneManager(canvas) {
         ui.lastScore.text(gm.score);
 
         if (player.body.health == 0) {
+            const skortinggi = new highscore(gm.score);
+
             time = false;
             $('#game-over-container').show();
         }
