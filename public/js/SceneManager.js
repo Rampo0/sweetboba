@@ -165,7 +165,7 @@ function SceneManager(canvas) {
     // seconds counting
     let seconds = 0.0;
 
-    var detik = 0.007;
+    var detik = 0.01;
 
     function Counting(detik) {
         seconds += detik;

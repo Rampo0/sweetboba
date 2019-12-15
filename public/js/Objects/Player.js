@@ -85,10 +85,10 @@ function Player(scene, world, material , {scaleX , scaleY , radSegments} , audio
      
         if (currentPressedKeys[37] && this.body.position.x > -185) {
             // Left
-            this.body.velocity.x = -100;
+            this.body.velocity.x = -200;
         }else if (currentPressedKeys[39] && this.body.position.x < 185) {
             // Right
-            this.body.velocity.x = 100;
+            this.body.velocity.x = 200;
         }else if(sensorY != null){
             if(sensorY > 0 && this.body.position.x < 185){
                 this.body.velocity.x = sensorY * 10;
