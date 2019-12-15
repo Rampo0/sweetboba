@@ -2,7 +2,7 @@ function Obstacle(scene,world, material, xPosition, spd){
 
      // Init Physics
 
-     var shape = new CANNON.Box(new CANNON.Vec3(15, 15 , 15));
+     var shape = new CANNON.Box(new CANNON.Vec3(20, 20 , 20));
      var mass = 0;
      this.body = new CANNON.Body({
          mass: mass,
@@ -36,7 +36,7 @@ function Obstacle(scene,world, material, xPosition, spd){
        
         mesh = gltf.scene;
         // mesh.name = this.body.id.toString();
-        mesh.scale.set(10,10,10);
+        mesh.scale.set(20,20,20);
        
         scene.add(mesh);
         mixer = new THREE.AnimationMixer(mesh);

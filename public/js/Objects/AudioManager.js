@@ -17,7 +17,7 @@ function AudioManager(camera){
             }
             sound.setBuffer(buffer);
             sound.setLoop(loop);
-            sound.setVolume(1);
+            sound.setVolume(5);
             sound.play();
         });
     }
