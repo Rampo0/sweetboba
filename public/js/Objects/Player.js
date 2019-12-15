@@ -8,15 +8,15 @@ function Player(scene, world, material , {scaleX , scaleY , radSegments} , audio
     var mixer;
     var mesh;
 
-    loader.load('assets/models/Cup.gltf', function (gltf) {
+    loader.load('assets/models/boba.gltf', function (gltf) {
        
         mesh = gltf.scene;
         // mesh.name = this.body.id.toString();
         mesh.scale.set(10,10,10);
        
         scene.add(mesh);
-        // mixer = new THREE.AnimationMixer(mesh);
-        // mixer.clipAction( gltf.animations[0] ).play();
+        mixer = new THREE.AnimationMixer(mesh);
+        mixer.clipAction( gltf.animations[0] ).play();
 
     }, undefined, function (e) {
         console.error(e);
@@ -75,9 +75,9 @@ function Player(scene, world, material , {scaleX , scaleY , radSegments} , audio
     
     this.update = function(time, sensorY){
 
-        // if(mixer){
-        //     mixer.update(time);
-        // }
+        if(mixer){
+            mixer.update(time);
+        }
         
         if(this.body.position.y <= 15){
             this.body.position.y = 15;
