@@ -18,9 +18,9 @@
             "name" : "Sphere.001",
             "rotation" : [
                 0,
-                0.2486899048089981,
+                0.5504807233810425,
                 0,
-                0.9685831665992737
+                0.8348478674888611
             ]
         }
     ],
@@ -125,19 +125,19 @@
         {
             "bufferView" : 4,
             "componentType" : 5126,
-            "count" : 50,
+            "count" : 51,
             "max" : [
                 2.0833333333333335
             ],
             "min" : [
-                0.041666666666666664
+                0
             ],
             "type" : "SCALAR"
         },
         {
             "bufferView" : 5,
             "componentType" : 5126,
-            "count" : 50,
+            "count" : 51,
             "type" : "VEC4"
         }
     ],
@@ -164,18 +164,18 @@
         },
         {
             "buffer" : 0,
-            "byteLength" : 200,
+            "byteLength" : 204,
             "byteOffset" : 23648
         },
         {
             "buffer" : 0,
-            "byteLength" : 800,
-            "byteOffset" : 23848
+            "byteLength" : 816,
+            "byteOffset" : 23852
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 24648,
+            "byteLength" : 24668,
             "uri" : "boba.bin"
         }
     ]
