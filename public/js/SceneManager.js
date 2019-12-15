@@ -227,8 +227,6 @@ function SceneManager(canvas) {
         ui.lastScore.text(gm.score);
 
         if (player.body.health == 0) {
-            const skortinggi = new highscore(gm.score);
-
             time = false;
             $('#game-over-container').show();
         }
