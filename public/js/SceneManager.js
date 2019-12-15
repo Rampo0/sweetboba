@@ -224,9 +224,18 @@ function SceneManager(canvas) {
         ui.health.text(player.body.health);
         //update ui score
         ui.score.text(gm.score);
-        ui.lastScore.text(gm.score);
+        //ui.lastScore.text(gm.score);
 
         if (player.body.health == 0) {
+            var highscore = localStorage.getItem("highscore");
+            if( gm.score >= highscore && highscore != null ){
+                localStorage.setItem("highscore", gm.score);
+            }else if(highscore == null){
+                localStorage.setItem("highscore", gm.score);
+            }
+
+            ui.lastScore.text(localStorage.getItem("highscore"));
+
             time = false;
             $('#game-over-container').show();
         }
