@@ -2,7 +2,7 @@
     width: 100%;
     height: 100%;
     position: fixed;
-    background: black;
+    /* background: black; */
 }
 
 .game-ui{
@@ -28,13 +28,24 @@
 }
 
 .health-bar{
-    top : 10px;
-    left:  10px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: calc(7px + (30 - 7) * ((100vw - 300px) / (1600 - 300)));
+
+    top : calc(2px + (17 - 2) * ((100vw - 300px) / (1600 - 300)));
+    left: calc(72px + (385 - 72) * ((100vw - 300px) / (1600 - 300)));
+    color: white;
+
 }
 
 .score{
-    top : 30px;
-    left: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: calc(7px + (30 - 7) * ((100vw - 300px) / (1600 - 300)));
+
+    top : calc(2px + (17 - 2) * ((100vw - 300px) / (1600 - 300)));
+    left:  calc(30px + (160 - 30) * ((100vw - 300px) / (1600 - 300)));
+    color: white;
 }
 
 .game-over{
@@ -44,3 +55,52 @@
     background: transparent;
 }
 
+.scoreboard{
+    position: relative;
+    /* width: calc(100px + (900 - 100) * ((100vw - 300px) / (1600 - 300))); */
+    /* height: calc(100px + (900 - 100) * ((100vw - 300px) / (1600 - 300))); */
+}
+
+.img-score{
+    width: 35%;
+}
+
+.logo-game{
+    top: 0px;
+    right: 0px;
+
+    width: calc(100px + (500 - 100) * ((100vw - 300px) / (1600 - 300)));
+    /* height: calc(200px + (500 - 200) * ((100vw - 300px) / (1600 - 300)));;     */
+}
+
+#game-over-container{
+    position: absolute;
+    top: 0px;
+}
+
+.tes{
+    background: red;
+}
+
+.bg-go{
+    width: 70%;
+    height: 70%;
+}
+
+.return-img{
+    width: 20%;
+}
+
+.return{
+    top: 65%;
+    width: 100%;
+}
+
+.last-score{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: calc(5px + (30 - 5) * ((100vw - 300px) / (1600 - 300)));
+    color: white;
+    top: 49%;
+    left: 54.5%;
+}

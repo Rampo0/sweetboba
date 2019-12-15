@@ -1,4 +1,4 @@
-function Cone(scene, world, material , {scaleX , scaleY , radSegments} , audioManager){
+function Player(scene, world, material , {scaleX , scaleY , radSegments} , audioManager){
     
     // var geometry = new THREE.ConeBufferGeometry( scaleX,scaleY,radSegments );
     // var material = new THREE.MeshBasicMaterial( {color: "#4ca8c9"} );
@@ -39,7 +39,7 @@ function Cone(scene, world, material , {scaleX , scaleY , radSegments} , audioMa
   
     // Player Status
 
-    this.body.health = 100;
+    this.body.health = 3;
         
     world.addBody(this.body);
     

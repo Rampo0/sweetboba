@@ -1,10 +1,13 @@
 function GameUI(){
 
     this.health =  $(".health-bar");
-    this.health.text("Health : " + 20);
+    this.health.text("20");
 
     this.score = $('.score');
-    this.score.text("Score : " + 200);
+    this.score.text("200");
+
+    this.lastScore = $('.last-score');
+    this.lastScore.text("");
     
     $('.back').click(function(){
 

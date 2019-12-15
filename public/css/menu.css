@@ -1,4 +1,18 @@
-.route-view{
+#video{
+    position: fixed;
+    z-index: 0;
+}
+
+.play-btn{
+    z-index: 3;
+}
+
+#uicanvas{
     width: 100%;
+    position: fixed;
     height: 100%;
+}
+
+.btn-container{
+    margin-top: calc(100px + (600 - 100) * ((100vw - 300px) / (1600 - 300)));
 }
