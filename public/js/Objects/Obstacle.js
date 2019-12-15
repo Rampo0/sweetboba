@@ -1,4 +1,4 @@
-function Obstacle(scene,world, material, xPosition){
+function Obstacle(scene,world, material, xPosition, spd){
 
      // Init Physics
 
@@ -26,7 +26,7 @@ function Obstacle(scene,world, material, xPosition){
          }
      });
  
-    var speed = 20;
+    var speed = spd;
 
     var loader = new THREE.GLTFLoader();
     var mixer;

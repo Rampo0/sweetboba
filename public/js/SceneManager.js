@@ -165,11 +165,15 @@ function SceneManager(canvas) {
     // seconds counting
     let seconds = 0.0;
 
-    function Counting() {
-        seconds += 0.01;
+    var detik = 0.007;
+
+    function Counting(detik) {
+        seconds += detik;
     }
-    let cancel = setInterval(Counting, 10);
+ //   let cancel = setInterval(Counting, 10);
     // end second counting
+
+    var speed = 20;
 
     this.update = function () {
         // stats.begin();
@@ -177,12 +181,22 @@ function SceneManager(canvas) {
  
         const elapsedTime = clock.getElapsedTime();
         world.step(timeStep);
+        
 
-        if (seconds >= 1) {
+        if(gm.score % 10 == 0 && gm.score != 0){
+            speed += 0.1;
+        }
+
+        Counting(detik);
+
+        if (seconds >= 0.7) {
             // todo every 5 seconds
             seconds = 0.0;
+            if(gm.score % 10 == 0) {
+                detik += 0.003
+            }
             // Spawn obstacles
-            sceneObjects.push(new Obstacle(scene, world, groundMaterial, GetRandomInt(-185, 185)));
+            sceneObjects.push(new Obstacle(scene, world, groundMaterial, GetRandomInt(-185, 185), speed));
         }
 
 
@@ -196,6 +210,7 @@ function SceneManager(canvas) {
             // }
 
             if (sceneObjects[i].body.position.z >= 100) {
+//                scoreCounting();
                 sceneObjects.splice(i, 1);
             }
         }
